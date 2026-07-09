@@ -6,7 +6,6 @@ function About() {
       id="about"
       className="px-10 pt-10 pb-8"
     >
-      {/* Heading */}
 
       <div className="flex items-center gap-5 mb-6">
 
@@ -22,7 +21,6 @@ function About() {
 
       </div>
 
-      {/* Paragraph */}
 
       <div className="ml-[68px]">
 

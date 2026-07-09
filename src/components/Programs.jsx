@@ -4,8 +4,6 @@ function Programs() {
   return (
     <section id="programs" className="px-10 py-8">
 
-      {/* Heading */}
-
       <div className="flex items-center gap-5 mb-8">
 
         <div className="w-11 h-11 rounded-lg bg-[#0b3d91] flex items-center justify-center shadow-lg">
@@ -17,8 +15,6 @@ function Programs() {
         </h2>
 
       </div>
-
-      {/* Programs Box */}
 
       <div className="ml-16">
 
