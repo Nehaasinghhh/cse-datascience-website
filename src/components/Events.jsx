@@ -5,95 +5,127 @@ import {
   Building2,
 } from "lucide-react";
 
+import poster from "../assets/images/poster.jpg";
+import lecture from "../assets/images/Guest_lecture.jpg";
+import quiz from "../assets/images/quiz_comp.jpg";
+import tour from "../assets/images/industrial_visit.jpeg";
+
 function Events() {
   const events = [
     {
-      icon: <Presentation size={28} />,
+      image: poster,
+      icon: <Presentation size={24} />,
       title: "Poster Presentation",
-      text: `Intelligent Data Systems Coordinator Prof. Sankar Mondaland Prof. Rajyashree Chandra`,
+      text: `Intelligent Data Systems
+
+Coordinator:
+Prof. Sankar Mondal
+Prof. Rajyashree Chandra`,
     },
 
     {
-      icon: <Calendar size={28} />,
+      image: lecture,
+      icon: <Calendar size={24} />,
       title: "Guest Lecture",
       text: `Smartness That Really Matters:
 Reaching New Levels of Customer Delight
 for Sustainable Supply Chain Management.
+
+Speaker:
 Dr. Vipul Jain`,
     },
 
     {
-      icon: <Trophy size={28} />,
-      title: "Quizz Competition",
+      image: quiz,
+      icon: <Trophy size={24} />,
+      title: "Quiz Competition",
       text: `QuizzVerse:
 Inter-Departmental Quiz Competition
-Coordinator Prof. Sudipta Dey and Prof. Moumita Chakraborty`,
+
+Coordinator:
+Prof. Sudipta Dey
+Prof. Moumita Chakraborty`,
     },
 
     {
-      icon: <Building2 size={28} />,
+      image: tour,
+      icon: <Building2 size={24} />,
       title: "Industrial Tour",
-      text: `Softech ERP Solutions Pvt. Ltd Coordinator Prof. Sankar Mondal and Prof. Sudipta Dey`,
+      text: `Industrial Visit
+
+Softech ERP Solutions Pvt. Ltd
+
+Coordinator:
+Prof. Sankar Mondal
+Prof. Sudipta Dey`,
     },
   ];
 
   return (
-    <section id="events" className="px-10 py-8">
+    <section
+      id="events"
+      className="bg-gradient-to-br from-blue-50 to-white py-20"
+    >
+      <div className="max-w-7xl mx-auto px-6">
 
+        {/* Heading */}
+        <div className="flex items-center gap-5 mb-12">
 
-      <div className="flex items-center gap-5 mb-8">
+          <div className="w-12 h-12 rounded-lg bg-[#0b3d91] flex items-center justify-center shadow-lg">
+            <Calendar size={24} color="white" />
+          </div>
 
-        <div className="w-11 h-11 rounded-lg bg-[#0b3d91] flex justify-center items-center shadow-lg">
-
-          <Calendar size={22} color="white" />
+          <h2 className="text-4xl font-bold text-[#0b3d91]">
+            Events
+          </h2>
 
         </div>
 
-        <h2 className="text-4xl font-bold text-[#0b3d91]">
-          Events
-        </h2>
+        {/* Cards */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-      </div>
+          {events.map((event, index) => (
 
-      {/* Cards */}
+            <div
+              key={index}
+              className="overflow-hidden rounded-2xl bg-white shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+            >
 
-      <div className="grid lg:grid-cols-4 gap-5">
+              {/* Image */}
+              <img
+                src={event.image}
+                alt={event.title}
+                className="h-52 w-full object-cover"
+              />
 
-        {events.map((event, index) => (
+              {/* Content */}
+              <div className="p-6">
 
-          <div
-            key={index}
-            className="bg-[#f7fbff] border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-lg transition"
-          >
+                <div className="mb-4 flex items-center gap-3">
 
-            <div className="flex items-center gap-3 mb-5">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-blue-100 text-[#0b3d91]">
+                    {event.icon}
+                  </div>
 
-              <div className="w-14 h-14 rounded-xl bg-white shadow flex justify-center items-center text-[#0b3d91]">
+                  <h3 className="text-xl font-bold text-[#0b3d91]">
+                    {event.title}
+                  </h3>
 
-                {event.icon}
+                </div>
+
+                <p className="whitespace-pre-line text-[15px] leading-7 text-gray-700">
+                  {event.text}
+                </p>
 
               </div>
 
-              <h3 className="font-bold text-[#0b3d91] text-lg leading-6">
-
-                {event.title}
-
-              </h3>
-
             </div>
 
-            <p className="text-[15px] leading-7 whitespace-pre-line text-gray-700">
+          ))}
 
-              {event.text}
-
-            </p>
-
-          </div>
-
-        ))}
+        </div>
 
       </div>
-
     </section>
   );
 }
