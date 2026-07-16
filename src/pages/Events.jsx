@@ -43,90 +43,98 @@ function Events() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <>
+      {/* Banner */}
+      <section className="bg-blue-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold">
+            Department Events
+          </h1>
 
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
-            Featured Events
-          </h2>
-
-          <div className="w-24 h-1 bg-blue-700 mx-auto mt-4 rounded-full"></div>
-
-          <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto leading-8">
+          <p className="mt-5 text-lg text-blue-100 max-w-3xl mx-auto leading-8">
             The Department of Computer Science & Engineering (Data Science)
             regularly organizes technical events, guest lectures, workshops,
             industrial visits and competitions to enhance students'
-            practical knowledge and professional skills.
+            technical expertise, innovation, leadership and practical
+            industry exposure.
           </p>
         </div>
+      </section>
 
-        {/* Cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {/* Events Section */}
+      <section className="bg-gradient-to-br from-blue-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
 
-          {events.map((event, index) => (
-            <div
-              key={index}
-              className="group overflow-hidden rounded-3xl bg-white border border-blue-100 shadow-lg transition-all duration-300 hover:-translate-y-3 hover:border-blue-700 hover:shadow-2xl"
-            >
-              {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={event.image}
-                  alt={event.title}
-                  className="h-60 w-full object-cover transition duration-500 group-hover:scale-110"
-                />
-              </div>
+          {/* Heading */}
+          <div className="text-center mb-14">
+            <h2 className="text-4xl md:text-5xl font-bold text-blue-900">
+              Featured Events
+            </h2>
 
-              {/* Content */}
-              <div className="p-6">
+            <div className="w-24 h-1 bg-blue-700 mx-auto mt-4 rounded-full"></div>
 
-                <div className="flex items-center gap-2 text-blue-700 mb-3">
-                  {event.icon}
-                  <span className="text-sm font-semibold">
-                    {event.date}
-                  </span>
+            <p className="mt-6 text-gray-600 text-lg max-w-3xl mx-auto leading-8">
+              Students actively participate in technical activities,
+              competitions, expert lectures and industrial visits that
+              bridge the gap between classroom learning and real-world
+              applications.
+            </p>
+          </div>
+
+          {/* Cards */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {events.map((event, index) => (
+              <div
+                key={index}
+                className="group overflow-hidden rounded-3xl bg-white border border-blue-100 shadow-lg transition-all duration-300 hover:-translate-y-3 hover:border-blue-700 hover:shadow-2xl"
+              >
+                {/* Image */}
+                <div className="overflow-hidden">
+                  <img
+                    src={event.image}
+                    alt={event.title}
+                    className="h-60 w-full object-cover transition duration-500 group-hover:scale-110"
+                  />
                 </div>
 
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">
-                  {event.title}
-                </h3>
+                {/* Content */}
+                <div className="p-6">
 
-                <p className="text-gray-600 leading-7 mb-6">
-                  {event.description}
-                </p>
+                  <div className="flex items-center gap-2 text-blue-700 mb-3">
+                    {event.icon}
+                    <span className="text-sm font-semibold">
+                      {event.date}
+                    </span>
+                  </div>
 
-                <Link
-                  to="/events"
-                  className="inline-flex items-center gap-2 font-semibold text-blue-800 transition hover:text-blue-600"
-                >
-                  Read More
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </Link>
+                  <h3 className="text-2xl font-bold text-blue-900 mb-4">
+                    {event.title}
+                  </h3>
 
+                  <p className="text-gray-600 leading-7 mb-6">
+                    {event.description}
+                  </p>
+
+                  <Link
+                    to="/events"
+                    className="inline-flex items-center gap-2 font-semibold text-blue-800 transition hover:text-blue-600"
+                  >
+                    Read More
+
+                    <ArrowRight
+                      size={18}
+                      className="transition-transform duration-300 group-hover:translate-x-2"
+                    />
+                  </Link>
+
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
         </div>
-
-        {/* Button */}
-        <div className="text-center mt-16">
-          <Link
-            to="/events"
-            className="inline-flex items-center gap-2 rounded-xl bg-blue-900 px-8 py-4 text-white text-lg font-semibold shadow-lg transition hover:bg-blue-700 hover:scale-105"
-          >
-            View All Events
-            <ArrowRight size={20} />
-          </Link>
-        </div>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
 

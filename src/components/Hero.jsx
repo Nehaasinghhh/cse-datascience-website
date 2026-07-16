@@ -1,42 +1,100 @@
-import uemLogo from "../assets/images/uem-logo.png";
-import cseLogo from "../assets/images/cse-logo.jpeg";
-import heroImage from "../assets/images/hero.jpeg";
+import heroImage from "../assets/images/iem_.jpg";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <header
-      className="relative min-h-[220px] bg-cover bg-center"
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden"
       style={{
         backgroundImage: `url(${heroImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-[#051a54]/95 via-[#0a2d6f]/90 to-[#1d66d8]/50"></div>
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-[#0B3D91]/75"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-5 md:px-10 py-6 gap-5">
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full flex flex-col lg:flex-row items-center justify-between min-h-screen">
 
-        <img
-          src={uemLogo}
-          alt="UEM Logo"
-          className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-white p-2 object-contain"
-        />
+        {/* Left Content */}
+        <div className="max-w-3xl text-white text-center lg:text-left">
 
-        <div className="text-center text-white">
-          <h1 className="text-2xl md:text-5xl font-bold">
-            Department of CSE (Data Science)
+          <span
+            className="
+              inline-block
+              px-5
+              py-2
+              rounded-full
+              border
+              border-white/30
+              text-sm
+              font-semibold
+              tracking-widest
+              mb-6
+            "
+          >
+            DEPARTMENT OF CSE Data Science | IEM KOLKATA
+          </span>
+
+          <h1
+            className="
+              text-5xl
+              md:text-6xl
+              font-extrabold
+              leading-tight
+              mb-6
+            "
+          >
+            Department of
+            <br />
+           CSE Data Science
           </h1>
 
-          <p className="mt-2 font-semibold text-sm md:text-lg">
-            University of Engineering and Management, Kolkata
+          <p
+            className="
+              text-lg
+              md:text-2xl
+              text-white/90
+              max-w-2xl
+              mb-10
+            "
+          >
+            Shaping the engineers of tomorrow through
+            research, innovation and excellence.
           </p>
+
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <a
+  href="https://exam.iem.edu.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+            <button
+              className="
+                bg-[#0B3D91]
+                hover:bg-white
+                hover:text-[#0B3D91]
+                text-white
+                px-8
+                py-4
+                rounded-xl
+                font-semibold
+                transition-all
+                duration-300
+              "
+            >
+              Admission Open  
+            </button>
+           
+                </a>
+          </div>
         </div>
 
-        <img
-          src={cseLogo}
-          alt="Department Logo"
-          className="w-20 h-20 md:w-24 md:h-24 rounded-xl bg-white p-2 object-contain"
-        />
-
+        
+        
       </div>
-    </header>
+    </section>
   );
 }
