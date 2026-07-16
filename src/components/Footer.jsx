@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   FaFacebookF,
   FaInstagram,
@@ -33,25 +34,25 @@ function Footer() {
 
             <ul className="space-y-3 text-gray-300">
               <li>
-                <a href="#about" className="hover:text-yellow-400">
+                <a href="/about" className="hover:text-yellow-400">
                   About
                 </a>
               </li>
 
               <li>
-                <a href="#events" className="hover:text-yellow-400">
+                <a href="/events" className="hover:text-yellow-400">
                   Events
                 </a>
               </li>
 
               <li>
-                <a href="#programs" className="hover:text-yellow-400">
+                <a href="/programs" className="hover:text-yellow-400">
                   Programs
                 </a>
               </li>
 
               <li>
-                <a href="#contact" className="hover:text-yellow-400">
+                <a href="/contact" className="hover:text-yellow-400">
                   Contact
                 </a>
               </li>

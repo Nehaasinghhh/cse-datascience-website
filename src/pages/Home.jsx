@@ -1,34 +1,18 @@
-import Navbar from "../components/Navbar";
-import About from "../components/About";
-import Events from "../components/Events";
+import Hero from "../components/Hero";
+import Department from "../components/Department";
+import HodMessage from "../components/HodMessage";
 import Programs from "../components/Programs";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Stats from "../components/Stats";
 
-function Home() {
+
+export default function Home() {
   return (
     <>
-      <Navbar />
-
-      <main className="bg-[#f5f7fb] py-10">
-
-        <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden">
-
-          <About />
-
-          <Events />
-
-          <Programs />
-
-          <Contact />
-
-        </div>
-
-      </main>
-
-      <Footer />
+    <Hero/>
+    <HodMessage />
+      <Department />
+      <Programs />
+      <Stats />  
     </>
   );
 }
-
-export default Home;
